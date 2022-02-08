@@ -23,6 +23,8 @@ fi
 
 echo "storage detected."
 
+modprobe g_mass_storage file=/var/disk/usb_storage.img removable=y
+
 # オリジナルのWIFI設定ファイルを保存
 out=`ls /etc/wpa_supplicant/org_wpa_supplicant.conf `
 out_cut=`echo ${out} | cut -c 1-1 `
