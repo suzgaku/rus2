@@ -1,5 +1,5 @@
 #!/bin/sh
-out=`ls /tmp/rus2/install.sh `
+out=`ls /tmp/rus2-main/install.sh `
 out_cut=`echo ${out} | cut -c 1-1 `
 if [ "$out_cut" = "/" ]; then
     echo "RUS2 update..."
