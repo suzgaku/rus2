@@ -4,25 +4,6 @@ echo "RUS2 auto setting..."
 
 shut_flag=0
 
-# USBメモリ(/storage)が見つかるまで待ち。ない場合は終了。
-echo "Detecting USB-memory..."
-for i in `seq 1 20`
-do
-    out=`ls /storage `
-    if [ "$out" = "/storage" ]; then
-        echo "Success."
-        break
-    fi
-    echo "wait"
-    sleep 1
-done
-if [ "${i}" = 20 ]; then
-    echo "Not detect."
-    exit 0
-fi
-
-echo "storage detected."
-
 modprobe g_mass_storage file=/var/disk/usb_storage.img removable=y
 
 # オリジナルのWIFI設定ファイルを保存
